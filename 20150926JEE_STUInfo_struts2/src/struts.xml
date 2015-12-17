@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <package name="default" namespace="/" extends="struts-default">
+    
+    	<!-- 设置拦截器 -->
+    	<interceptors>
+    		<interceptor name="timer" class="com.opensymphony.xwork2.interceptor.TimerInterceptor"></interceptor>
+    		<interceptor name="params" class="com.opensymphony.xwork2.interceptor.ParametersInterceptor"></interceptor>
+    		<interceptor name="" class=""></interceptor>
+    	</interceptors>
+		
+		<!-- 默认action -->
+        <!-- <default-action-ref name="index" /> -->
+       
+        <!-- 全局结果 -->
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+        
+        <!-- 测试action -->
+        <action name="helloworld" class="com.sxb.action.Helloworld">
+        	<interceptor-ref name="params"></interceptor-ref>
+        	<interceptor-ref name="timer"></interceptor-ref>
+        	<result>/helloworld.jsp</result> 
+        </action>
+        
+        <!--主页的action -->
+        <action name="getInfo" class="com.sxb.action.StudentInfoAction" method="getInfo">
+        	<result>/index1.jsp</result>
+        </action>
+
+    </package>
+    
+    <package name="asynchronous-ajax"  namespace="/" extends="json-default">
+    
+    	<!-- 实现异步访问的action -->
+        <!-- 异步通配符获取学生数据 -->
+        <action name="get{1}ById" class="com.xbss.action.{1}Action" method="get{1}ById">
+        	<result name="success" type="json"></result>
+        </action>
+    
+    </package>
+
+</struts>
