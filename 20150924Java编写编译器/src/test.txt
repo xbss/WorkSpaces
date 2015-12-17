@@ -1,0 +1,11 @@
+int $a;
+int a=5.5;
+int a4=5.8;
+int a$_=55;
+int 4a=5.5;
+String ass="sss";
+a++;
+b--;
+String[] abc={"1","2","4"};
+char[] abcc={'a','c'};
+(a+b)*5/c

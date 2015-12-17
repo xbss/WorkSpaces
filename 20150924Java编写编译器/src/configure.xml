@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<compile>
+	<sign>
+		<value>int,String,char,String[],char[]</value>
+	</sign>
+	<opeator>
+		<value>+,-,*,/,=,--,;,!,==,+=,++,&lt;,&gt;,&lt;&gt;,&lt;=,&gt;=,(,),{,}</value>
+	</opeator>
+	<special>
+		<value>$,_</value>
+	</special>
+</compile>
