@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="20151221多线程上传下载">
+        <wb-resource deploy-path="/" source-path="/Web" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/demo1"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/demo2"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/demo3"/>
+        <property name="context-root" value="20151221多线程上传下载"/>
+        <property name="java-output-path" value="/20151221多线程上传下载/build/classes"/>
+    </wb-module>
+</project-modules>
