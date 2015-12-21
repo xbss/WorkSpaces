@@ -1,0 +1,294 @@
+body {
+	width: 100%;
+	height: auto;
+	/* background: #4d5a49;
+	background-image: url("../../../modules/user/image/bg1.png");
+	background-repeat: repeat;
+	background-position: center; */
+	background-image: url("../../../modules/user/image/bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	font-size: 1.0em;
+	font-family: "微软雅黑";
+	color: rgb(255, 255, 255);
+	margin: 0;
+	text-align: center;
+	font-size: 1.0em;
+}
+
+a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	outline: 0 none;
+}
+
+a:hover {
+	color: red;
+}
+
+a:visited {
+	
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrap {
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+/* 头部 */
+#head {
+	width: 100%;
+	height: 40px;
+	background: #0593d3;
+	z-index: 1000;
+	position: fixed;
+	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .6);
+	/* margin-top: -20px; */
+	top: 0px;
+}
+
+#head_content {
+	width: 940px;
+	height: auto;
+}
+
+#head_user {
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	text-align: right;
+}
+
+.login-reigster {
+	width: 30px;
+	height: 50%;
+	line-height: 20px;
+	overflow: hidden;
+	backgound: red;
+	vertical-align: middle;
+	position: relative;
+	top: -15px;
+}
+
+#user {
+	width: 30px;
+	height: 50%;
+	line-height: 20px;
+	overflow: hidden;
+	backgound: red;
+	vertical-align: middle;
+	position: relative;
+	top: -15px;
+}
+
+#user_head {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+#user_head:hover { /* width: auto;
+	height: 100%; */
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+}
+
+#head_logo {
+	width: 20%;
+	height: 100%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	text-align: left;
+}
+
+#head_logo img {
+	height: 100%;
+	width: auto;
+	margin-left: 0px;
+}
+
+#head_logo img:hover {
+	height: 100%;
+	widows: auto;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .6);
+}
+
+#head_search {
+	width: 28%;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	top: 0px;
+	margin: 0px;
+	margin-top: -30px;
+	vertical-align: middle;
+	text-align: right;
+}
+
+#head_search input {
+	width: auto;
+	height: 30px;
+	padding: 0px;
+	margin: 3px;
+	text-indent: 6px;
+	border: 2px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .6);
+	background-image: url("../../../modules/user/image/search.png");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+#main {
+	width: 940px;
+	height: auto;
+	color: black;
+	/* background: url("../../../modules/user/image/frontlogo.png"); */
+	top: 50px;
+	padding-bottom: 64px;
+	z-index: 900;
+}
+
+#navigationBar { /* width: 24%; */
+	width: 100px;
+	height: auto;
+	/* background: #d7dbe0; */
+	/* display: inline-block; */
+	padding-bottom: 30px;
+	top: 0px;
+	/* position: relative; */
+	position: fixed;
+}
+
+.goodtype {
+	color: black;
+	display: block;
+	font-size: 1.2em;
+	height: 50px;
+	background: #fff;
+	border: 2px;
+	border-radius: 60px 10px 60px 10px;
+	padding-bottom: 6px;
+	margin: 2px;
+	overflow: hidden;
+	line-height: 50px;
+}
+
+.goodtype:hover {
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .6);
+	background: #0593d3;
+	color:white;
+	font-size: 1.5em;
+}
+
+#content {
+	width: 75%;
+	height: auto;
+	display: inline-block;
+	position: relative;
+	/* top: -800px; */
+	/* top:-490px; */
+	/* left: 120px; */
+	left:0px;
+}
+
+#goodtable {
+	width: 96%;
+	height: auto;
+	border: 0px;
+}
+
+#goodtable td {
+	/* width: 24%; */
+	width:200px;
+	height: 24%;
+	padding: 2px;
+	background: url("../../../modules/user/image/goodbg35.png");
+}
+
+#goodtable td:hover {
+	/* width: 26%; */
+	height: 24%;
+	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .6);
+	background: url("../../../modules/user/image/goodbg.png");
+}
+
+#good {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 1px;
+	/* background-image: url("../../../modules/user/image/goodbg.png"); */
+	background-repeat: repeat;
+	border: 2px;
+}
+
+#goodpicdiv {
+	width: 200px;
+	height: 190px;
+	overflow: hidden;
+}
+
+#goodpic {
+	width: auto;
+	height: 100%;
+	margin: 0 auto;
+}
+#goodcontent{
+	width: 200px;
+	height: auto;
+}
+
+#goodprice {
+	color: red;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#goodtitle {
+	color: white;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+#goodQuery {
+	background: url("../../../modules/user/image/goodbg.png");
+	font-size: 1.0em;
+}
+
+#goodQuery:hover {
+	background: white;
+}
+
+#foot {
+	width: 100%;
+	height: 40px;
+	background: #0593d3;
+	margin-top: 50px;
+	/* bottom: 0px;
+	margin-bottom: 0px; */
+	margin-bottom: 0px; 
+	bottom : 0px; 
+	position : absolute;
+	position: ;
+	z-index: 200;
+	bottom: 0px;
+	position: fixed;
+}
+
+#foot h1 {
+	font-size: 0.8em;
+	font-style: normal;
+	font-weight: lighter;
+	line-height: 20px;
+	vertical-align: middle;
+}

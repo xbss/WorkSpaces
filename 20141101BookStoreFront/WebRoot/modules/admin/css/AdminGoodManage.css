@@ -1,0 +1,58 @@
+a {
+	color: green;
+	text-decoration: none;
+	outline: 0 none;
+}
+
+a:hover {
+	/* color: red; */
+}
+
+a:visited {
+	
+}
+
+.handle{
+	width: 100%;
+	height:auto;
+	color: #000;
+	border-collapse: collapse;
+	margin-top: 26px;
+	margin-bottom: 25px;
+}
+.handle button{
+	width:auto;
+	height:auto;
+	color:#fff;
+	font-size:1.1em;
+	font-weight:bolder;
+	border: none;
+	background-color: #58cf04;
+}
+.handle button:hover{
+	background-color: #469d08;
+}
+.datatable{
+	width: 100%;
+	color: #000;
+	margin: 5px;
+	border-collapse: collapse;
+}
+.datatable th{
+	background: #58cf04;
+	border: 1px solid #b9fd7d;
+}
+.datatable td{
+	border: 1px solid #b9fd7d;
+	margin: 0px;
+	padding: 0px;
+}
+
+td:hover {
+	/* width: 26%; */
+	font-weight:bold;
+	/* font-size:1.3em; */
+	/* height: 24%; */
+	/* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6); */
+	background: url("../../../modules/user/image/goodbg.png");
+}
