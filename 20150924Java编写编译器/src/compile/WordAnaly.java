@@ -2,7 +2,7 @@
  * @author rain
  * 2012.4.15
  */
-package com.compile;
+package compile;
 
 import java.io.File;
 

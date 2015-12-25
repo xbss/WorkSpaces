@@ -3,7 +3,7 @@
  * 2012.4.15
  * 对按钮的事件响应
  */
-package com.view.action;
+package view.action;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -3,7 +3,7 @@
  * 2012.4.14
  * 读取文件中的数据
  */
-package com.util;
+package util;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -3,7 +3,7 @@
  * 2012.4.14
  * 读取XML中的数据
  */
-package com.util;
+package util;
 
 import java.io.File;
 import java.io.IOException;
