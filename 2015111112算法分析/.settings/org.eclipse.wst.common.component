@@ -7,6 +7,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Test04"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Test05"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/Test06"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/com.xbss.curriculum.design"/>
         <property name="context-root" value="2015111112算法分析"/>
         <property name="java-output-path" value="/2015111112算法分析/build/classes"/>
     </wb-module>

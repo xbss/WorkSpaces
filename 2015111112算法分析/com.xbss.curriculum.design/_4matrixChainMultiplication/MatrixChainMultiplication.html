@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>矩阵链相乘</title>
+<!-- bootstrap and CSS -->
+<link rel="stylesheet"
+	href="../webFrame/bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../webFrame/bootstrap-3.3.5/css/bootstrap-theme.min.css" />
+<link rel="stylesheet"
+	href="../webFrame/bootstrap-3.3.5/css/buttons.css">
+<link rel="stylesheet"
+	href="../webFrame/bootstrap-table-1.9.1/bootstrap-table.min.css" />
+<link rel="stylesheet" href="../webFrame/xbss-message/message.css" />
+<link rel="stylesheet" href="MatrixChainMultiplication.css" />
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" style="color:#FFF">矩阵链相乘页面展示</a><br>
+				<a href="../_3longestCommonSubSequence/LongestCommonSubSequence.html" class="navbar-brand">最长子序列页面展示</a>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<div class="navbar-form navbar-right">
+					<div class="form-group">
+						<input type="text" id="slideTime"name="slideTime" style="width:400px"placeholder="输入延迟时间例如：200" 
+							onkeyup="this.value=this.value.replace(/\D/g,'')"  
+							onafterpaste="this.value=this.value.replace(/\D/g,'')"
+							maxLength="5"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="text" id="firstString"name="firstString" style="width:400px"placeholder="输入数字例如：1,2,5,2,6" 
+							maxLength="25"
+							class="form-control">
+					</div>
+					<button id="startMC" class="btn btn-success" onclick="run()">开始演示</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- /.navbar-collapse -->
+	
+	<div id="mc-table">
+		<!-- 显示处理过程的表格 -->
+		<table id="mc-table-data">
+		</table>
+	</div>
+	<div id="mc-result" class="hiddenTd">
+		<div id="mc-result-head">
+			INFO：矩阵链相乘
+		</div>
+		<div id="mc-result-content">
+			<div id="mc-result-min">
+				最小的乘法次数为：<span id="mc-result-min-text"></span>
+			</div>
+			<div id="mc-result-multiStirng">
+				括号的分割方式为：<span id="mc-result-multi-text"></span>
+			</div>
+			<div id="mc-process"></div>
+		</div>
+	</div>
+
+	<!-- 加载JS -->
+	<script src="../webFrame/jquery/jquery-2.1.1.min.js"></script>
+	<script src="../webFrame/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script src="../webFrame/bootstrap-table-1.9.1/bootstrap-table.min.js"></script>
+	<script
+		src="../webFrame/bootstrap-table-1.9.1/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../webFrame/xbss-message/message.js"></script>
+	<script type="text/javascript" src="MatrixChainMultiplication.js"></script>
+</body>
+</html>
