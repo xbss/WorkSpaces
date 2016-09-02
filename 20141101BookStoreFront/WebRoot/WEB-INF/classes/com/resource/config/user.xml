@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- 有关用户的登陆退出，和其他相关的用户操作 -->
+<struts>
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="login" class="com.sxb.login.LoginAction">
+			<result name="loginSuccess">/success.jsp</result>
+			<result name="loginFailure">/failure.jsp</result>
+		</action>
+		<action name="logout" class="com.sxb.login.LogoutAction"></action>
+	</package>
+</struts>
