@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>定位</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+	background: #ccc;
+	overflow: hidden;
+	text-align:;
+}
+
+#title {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	bottom: -50px;
+	padding: 10px;
+	color: #fff;
+	background: #456824;
+	z-index: 1;
+	opacity: .8;
+}
+
+#decription {
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	padding: 5px;
+	background: #2285ff;
+	text-decoration: none;
+	text-align: center;;
+}
+</style>
+</head>
+<body>
+
+	<!-- 容器 -->
+	<div id="container">
+		<!-- 上滑文字动画层 -->
+		<div id="title">
+			文字上画动画效果 <br> <br> here we are .
+		</div>
+		<!-- 链接层 -->
+		<a id="decription" href="#"> </a>
+	</div>
+	
+	<!-- JavaScript控制 -->
+	<script>
+		window.onload = function() {
+			var initOffset = -50;
+			var targetSet = 0;
+			var time = 20;
+			var timer;
+			var dValue = 10;
+			var operatorObject = document.getElementById("container");
+			var targetObject = document.getElementById("title");
+			function moveSet(arg) {
+				clearInterval(timer);
+				timer = setInterval(function() {
+
+					if (-targetObject.offsetTop > arg)
+						dValue = -10;
+					else {
+						dValue = 10;
+					}
+
+					if (-targetObject.offsetTop == arg) {
+						clearInterval(timer);
+					} else {
+						console.info("dValue" + dValue);
+						targetObject.style.bottom = (-targetObject.offsetTop)
+								+ dValue + "px";
+					}
+				}, time);
+			}
+			var title = document.getElementById("title");
+			operatorObject.onmouseover = function() {
+				moveSet(0)
+			};
+			operatorObject.onmouseout = function() {
+				moveSet(-50)
+			};
+		}
+	</script>
+</body>
+</html>
