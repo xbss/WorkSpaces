@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.module" note="模块 " author="xbss">
+		Module
+	</class>
+	
+	<fields>
+		<field isId="1">
+			moduleCode
+		</field>
+		<field>
+			moduleType
+		</field>
+		<field>
+			moduleName
+		</field>
+		<field>
+			url
+		</field>
+		<field>
+			parent
+		</field>
+		<field>
+			icon
+		</field>
+		<field type="boolean">
+			hasChild
+		</field>
+		<field type="int">
+			isEndOfModuleLevel
+		</field>
+		<field type="int">
+			level0
+		</field>
+		<field type="int">
+			isFolder
+		</field>
+		<field type="int">
+			showMenuPage
+		</field>
+		<field>
+			childShowType
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

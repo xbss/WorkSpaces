@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reChartResult" note="图表生成记录 " author="cy">
+		ReChartResult
+	</class>
+	
+	<fields>
+		<field isId="1">
+			chartID
+		</field>
+		<field>
+			type 
+		</field>
+		<field>
+			category 
+		</field>
+		<field>
+			title 
+		</field>
+		<field>
+			url 
+		</field>
+		<field>
+			chartCode 
+		</field>
+		<field>
+			remark 
+		</field>
+		<field type="date">
+			createTime 
+		</field>
+		<field type="boolean">
+			isExporting 
+		</field>
+		<field>
+			searchCondition 
+		</field>
+		<field>
+			chartFacID 
+		</field>
+		<field>
+			complexID 
+		</field>
+	</fields>
+</entity>

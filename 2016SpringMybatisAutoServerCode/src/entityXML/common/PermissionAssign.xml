@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.permissionassign" note="权限分配" author="xbss">
+		PermissionAssign
+	</class>
+	
+	<fields>
+		<field isId="1">
+			id
+		</field>
+		<field tip="所有者" type="int">
+			ownerType
+		</field>
+		<field>
+			ownerCode
+		</field>
+		<field type="int">
+			permissionType
+		</field>
+		<field>
+			permissionCode
+		</field>
+		<field type="boolean">
+			isNo
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

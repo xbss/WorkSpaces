@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.sysuser" note="人员" author="xbss">
+		SysUser
+	</class>
+	
+	<fields>
+		<field isId="1">
+			sysUserID
+		</field>
+		<field>
+			sysUserName
+		</field>
+		<field>
+			sysUserKind
+		</field>
+		<field type="int">
+			sex
+		</field>
+		<field type="int">
+			age
+		</field>
+		<field type="date">
+			birthday
+		</field>
+		<field>
+			headPhoto
+		</field>
+		<field>
+			email
+		</field>
+		<field>
+			mobileNumber
+		</field>
+		<field>
+			enterpriseID
+		</field>
+		<field>
+			enterpriseName
+		</field>
+		<field>
+			departmentID
+		</field>
+		<field>
+			departmentName
+		</field>
+		<field>
+			resume
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

@@ -1,0 +1,38 @@
+package ${packagePath};
+
+import java.util.Date;
+import com.cqut.service.tableCreator.ID;
+
+/**
+ * @author ${classAuthor}
+ * ${classNote}
+ */
+public class ${className}{
+	
+	@ID
+	private String  ${entityID};
+	<#list propNotID as pro> 
+	<#if pro.tip != "">
+	/** 
+	 * ${pro.tip}
+	 */
+	 </#if>
+	private ${pro.type} ${pro.name};
+	</#list>
+	
+	
+	<#list properties as pro> 
+	public ${pro.type} get${pro.name?cap_first}() {
+		return ${pro.name};
+	}	
+	
+	public void set${pro.name?cap_first}(${pro.type} ${pro.name}) {
+		this.${pro.name} = ${pro.name};
+	}
+	</#list>
+	
+	@Override
+	public String toString() {
+		return  <#list properties as pro> ${pro.name}  + "\t" <#if pro_has_next>+</#if> </#list>;
+	}
+}

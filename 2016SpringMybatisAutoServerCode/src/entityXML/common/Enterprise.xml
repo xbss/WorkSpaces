@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.enterprise" note="单位" author="xbss">
+		Enterprise
+	</class>
+	
+	<fields>
+		<field isId="1">
+			enterpriseID
+		</field>
+		<field>
+			enterpriseName
+		</field>
+		<field>
+			enterpriseType
+		</field>
+		<field>
+			artificialPersonIDNumber
+		</field>
+		<field>
+			artificialPersonName
+		</field>
+		<field>
+			fax
+		</field>
+		<field>
+			zipCode
+		</field>
+		<field>
+			address
+		</field>
+		<field>
+			plane
+		</field>
+		<field>
+			email
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

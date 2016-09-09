@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.role" note="角色 " author="xhay">
+		Role
+	</class>
+	
+	<fields>
+		<field isId="1">
+			id
+		</field>
+		<field>
+			name
+		</field>
+	</fields>
+</entity>

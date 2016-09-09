@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reComplexReport" note="复合报表记录 " author="cy">
+		ReComplexReport
+	</class>
+	
+	<fields>
+		<field isId="1">
+			complexReportID
+		</field>
+		<field>
+			complexReportCode 
+		</field>
+		<field>
+			remark 
+		</field>
+		
+	</fields>
+</entity>

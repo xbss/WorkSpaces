@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.news" note="新闻 " author="bin">
+		News
+	</class>
+	
+	<fields>
+		<field isId="1">
+			newsID
+		</field>
+		<field type="date">
+			Release
+		</field>
+		<field>
+			content
+		</field>
+	</fields>
+</entity>

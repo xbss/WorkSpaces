@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.systemfile" note="系统文件 " author="xbss">
+		SystemFile
+	</class>
+	
+	<fields>
+		<field isId="1">
+			id
+		</field>
+		<field type="date">
+			alterTime
+		</field>
+		<field>
+			creator
+		</field>
+		<field>
+			fileName
+		</field>
+		<field>
+			fileNumber
+		</field>
+		<field type="double">
+			fileSize
+		</field>
+		<field>
+			fileType
+		</field>
+		<field type="date">
+			newTime
+		</field>
+		<field>
+			savePath
+		</field>
+		<field>
+			whoAlter
+		</field>
+		<field>
+			ownerCode
+		</field>
+		<field>
+			originalFilename
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

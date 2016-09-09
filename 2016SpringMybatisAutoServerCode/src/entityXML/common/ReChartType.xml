@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reChartType" note="图表分类 " author="cy">
+		ReChartType
+	</class>
+	
+	<fields>
+		<field isId="1">
+			chartTypeID
+		</field>
+		<field>
+			chartTypeName 
+		</field>
+		<field>
+			remark 
+		</field>
+		
+	</fields>
+</entity>

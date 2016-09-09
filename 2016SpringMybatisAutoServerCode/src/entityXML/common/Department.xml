@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.department" note="部门" author="xbss">
+		Department
+	</class>
+	
+	<fields>
+		<field isId="1">
+			departmentID
+		</field>
+		<field>
+			departmentCode
+		</field>
+		<field>
+			enterpriseID
+		</field>
+		<field>
+			departmentName
+		</field>
+		<field>
+			parent
+		</field>
+		<field type="int">
+			haschild
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

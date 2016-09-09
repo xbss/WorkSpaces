@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reChartFactory" note="图表类别记录 " author="cy">
+		ReChartFactory
+	</class>
+	
+	<fields>
+		<field isId="1">
+			chartFacID
+		</field>
+		<field>
+			type 
+		</field>
+		<field>
+			category 
+		</field>
+		<field>
+			js 
+		</field>
+		<field>
+			remark 
+		</field>
+		<field>
+			chartTypeID 
+		</field>
+	</fields>
+</entity>

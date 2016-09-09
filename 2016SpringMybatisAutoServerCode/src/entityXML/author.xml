@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.book" note="新闻 " author="bin">
+		Author
+	</class>
+	
+	<fields>
+		<field isId="1">
+			AuthorID
+		</field>
+		<field>
+			AuthorName
+		</field>
+		<field type="date">
+			Birthday
+		</field>
+		
+	</fields>
+</entity>

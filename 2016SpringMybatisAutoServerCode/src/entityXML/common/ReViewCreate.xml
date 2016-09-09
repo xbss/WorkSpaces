@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reViewCreate" note="视图创建表 " author="cy">
+		ReViewCreate
+	</class>
+	
+	<fields>
+		<field isId="1">
+			ID
+		</field>
+		<field>
+			viewName 
+		</field>
+		<field>
+			viewSql 
+		</field>
+		<field type="date">
+			createTime 
+		</field>
+		
+	</fields>
+</entity>

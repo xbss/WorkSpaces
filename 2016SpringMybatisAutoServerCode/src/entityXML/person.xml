@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.person" note="个人" author="bin">
+		Person
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			PersonID
+		</field>
+		<field type="int">
+			age
+		</field>
+		
+	</fields>
+</entity>

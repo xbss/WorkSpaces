@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.codetable" note="码表" author="xbss">
+		CodeTable
+	</class>
+	
+	<fields>
+		<field isId="1">
+			codeTableCode
+		</field>
+		<field >
+			codeType
+		</field>
+		<field>
+			codeTableName
+		</field>
+		<field>
+			codeTableVal
+		</field>
+		<field>
+			parentCode
+		</field>
+		<field type="boolean">
+			hasChild
+		</field>
+		<field>
+			icon
+		</field>
+		<field>
+			chineseChar
+		</field>
+		<field type="int">
+			level0
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>

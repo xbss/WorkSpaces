@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.person" note="文章实体" author="wujuntao">
+		article
+	</class>
+	
+	<fields>
+		<field isId="1" >
+			Id
+		</field>
+		<field>
+			Articleid
+		</field>
+	</fields>
+</entity>

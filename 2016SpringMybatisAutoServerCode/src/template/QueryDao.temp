@@ -1,0 +1,10 @@
+package ${packagePath?replace("entity", "dao")};
+
+
+/**
+ * @author ${classAuthor}
+ * ${classNote}
+ */
+public interface ${className}QueryDao {
+
+}

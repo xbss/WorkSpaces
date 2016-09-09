@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.reFormResult" note="表格生成记录 " author="cy">
+		ReFormResult
+	</class>
+	
+	<fields>
+		<field isId="1">
+			formID
+		</field>
+		<field>
+			formName 
+		</field>
+		<field>
+			dataSql 
+		</field>
+		<field type="boolean">
+			isExport 
+		</field>
+		<field type="date">
+			updateData 
+		</field>
+		<field type="boolean">
+			isShowAll 
+		</field>
+		<field type="int">
+			showLine 
+		</field>
+		<field>
+			url 
+		</field>
+		<field>
+			theadInfo 
+		</field>
+		<field>
+			searchCondition 
+		</field>
+		<field>
+			complexID 
+		</field>
+		<field>
+			remark 
+		</field>
+	</fields>
+</entity>

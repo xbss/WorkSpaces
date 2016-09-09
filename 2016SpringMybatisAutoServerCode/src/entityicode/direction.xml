@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.direction" note="方向" author="xbss">
+		Direction
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			directionID
+		</field>
+		<field type="double">
+			name
+		</field>
+		<field >
+            icon
+        </field>
+        <field >
+            label
+        </field>
+        <fieled>
+            remarks
+        </fieled>
+        <field >
+            description
+        </field>
+	</fields>
+</entity>

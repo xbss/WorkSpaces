@@ -1,0 +1,32 @@
+package ${packagePath?replace("entity", "service")};
+
+
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
+import com.cqut.service.search.SearchService;
+import com.cqut.tool.util.EntityIDFactory;
+
+import  ${packagePath?replace("entity", "dao")}.${className}Dao;
+import  ${packagePath}.${className};
+
+/**
+ * @author ${classAuthor}
+ * ${classNote}
+ */
+@Service
+public class ${className}Service extends SearchService implements I${className}Service{
+	
+	@Resource(name="${className?uncap_first}Dao")
+	${className}Dao dao ;
+
+	@Override
+	public String getBaseEntityName() {
+		return "${className?uncap_first}";
+	}
+
+	@Override
+	public String getBasePrimaryKey() {
+		return "${className?uncap_first}.${entityID}";
+	}
+	
+}

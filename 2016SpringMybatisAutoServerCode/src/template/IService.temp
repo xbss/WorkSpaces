@@ -1,0 +1,9 @@
+package ${packagePath?replace("entity", "service")};
+
+/**
+ * @author ${classAuthor}
+ * ${classNote}
+ */
+public interface I${className}Service {
+	
+}

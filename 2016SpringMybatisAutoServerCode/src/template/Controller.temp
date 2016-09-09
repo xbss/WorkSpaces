@@ -1,0 +1,20 @@
+package ${packagePath?replace("entity", "controller")};
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ${packagePath?replace("entity", "service")}.I${className}Service;
+
+/**
+ * @author ${classAuthor}
+ * ${classNote}
+ */
+@Controller
+@RequestMapping("/${className?uncap_first}Controller")
+public class ${className}Controller{
+	
+	@Resource(name="${className?uncap_first}Service")
+	I${className}Service service;
+}

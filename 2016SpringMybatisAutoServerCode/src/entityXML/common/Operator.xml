@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.cqut.entity.operator" note="操作员 " author="xbss">
+		Operator
+	</class>
+	
+	<fields>
+		<field isId="1">
+			operatorCode
+		</field>
+		<field>
+			loginName
+		</field>
+		<field>
+			password
+		</field>
+		<field>
+			userID
+		</field>
+		<field>
+			userName
+		</field>
+		<field>
+			accountType
+		</field>
+		<field type="boolean">
+			state
+		</field>
+		<field type="date">
+			lastLoginedTime
+		</field>
+		<field>
+			remarks
+		</field>
+	</fields>
+</entity>
