@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.purchasePlan" note="采购计划" author="xbss">
+		PurchasePlan
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			pPId
+		</field>
+		<field >
+			pPInfo
+		</field>
+		<field >
+            operatorId
+        </field>
+        <field >
+            operatorName
+        </field>
+        <field type="double">
+            totalPrice
+        </field>
+	</fields>
+</entity>

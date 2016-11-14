@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.rbCard" note="一卡通/会员卡" author="xbss">
+		RbCard
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			cardId
+		</field>
+		<field type="date">
+			signTime
+		</field>
+		<field>
+            signUserId
+        </field>
+        <field >
+            signUserName
+        </field>
+        <field type="int">
+            level
+        </field>
+        <field type="double">
+            discount
+        </field>
+        <field>operatorId</field>
+        <field>operatorName</field>
+        <field type="int">
+            state
+        </field>
+	</fields>
+</entity>

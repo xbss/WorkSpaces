@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.yearFinancialSheet" note="年财务" author="xbss">
+		YearFinancialSheet
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			yFSId
+		</field>
+		<field type="date">
+			createTime
+		</field>
+		<field type="double">
+            income
+        </field>
+        <field type="double">
+            purchaseCosts
+        </field>
+        <field type="double">
+            maintenanceCosts
+        </field>
+        <field type="double">
+            compensation
+        </field>
+        <field type="double">
+            recycleIncomes
+        </field>
+        <field  type="double">
+            totalIncome
+        </field>
+        <field >
+            remarks
+        </field>
+	</fields>
+</entity>

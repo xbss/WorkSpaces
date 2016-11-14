@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.storage" note="仓库" author="xbss">
+		Storage
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			storageId
+		</field>
+		<field >
+			address
+		</field>
+		<field type="int">
+            state
+        </field>
+        <field type="date">
+            createTime
+        </field>
+        <field>
+            operatorId
+        </field>
+        <field>
+            operatorName
+        </field>
+        <field >
+            information
+        </field>
+	</fields>
+</entity>

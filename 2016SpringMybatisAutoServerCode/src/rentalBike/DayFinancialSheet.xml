@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.dayFinancialSheet" note="日财务表" author="xbss">
+		DayFinancialSheet
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			dFSId
+		</field>
+		<field type="date">
+			createTime
+		</field>
+		<field type="double">
+            income
+        </field>
+        <field type="double">
+            purchaseCosts
+        </field>
+        <field type="double">
+            maintenanceCosts
+        </field>
+        <field type="double">
+            compensation
+        </field>
+        <field type="double">
+            recycleIncomes
+        </field>
+        <field  type="double">
+            totalIncome
+        </field>
+        <field >
+            remarks
+        </field>
+	</fields>
+</entity>

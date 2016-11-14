@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.suggestion" note="意见建议" author="xbss">
+		Suggestion
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			suggestionId
+		</field>
+		<field >
+			content
+		</field>
+		<field type="int">
+            state
+        </field>
+        <field >
+            operatorId
+        </field>
+        <field>
+            operatorName
+        </field>
+        <field >
+            userId
+        </field>
+        <field >
+            userName
+        </field>
+        <field type="date">
+            submitTime
+        </field>
+        <field >
+            feedBackInfo
+        </field>
+	</fields>
+</entity>

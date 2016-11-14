@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.compensationRecord" note="赔偿记录" author="xbss">
+		CompensationRecord
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			cRId
+		</field>
+		<field >
+			bikeId
+		</field>
+		<field >
+            userId
+        </field>
+        <field >
+            userName
+        </field>
+        <field>
+            rentalId
+        </field>
+        <field type="double">
+            price
+        </field>
+         <field >
+            reason
+        </field>
+         <field >
+            operatorId
+        </field>
+        <field>operatorName</field>
+         <field type="date">
+            cRTime
+        </field>
+	</fields>
+</entity>

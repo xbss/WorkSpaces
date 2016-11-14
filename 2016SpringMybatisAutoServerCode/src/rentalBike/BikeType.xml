@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.bikeType" note="自行车车型" author="xbss">
+		BikeType
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			bikeTypeId
+		</field>
+		<field >
+			supplierId
+		</field>
+		<field>
+		  supplierName
+		</field>
+		<field >
+            bikeTypeName
+        </field>
+        <field type="date">
+            createTime
+        </field>
+        <field type="double">
+            price
+        </field>
+        
+	</fields>
+</entity>

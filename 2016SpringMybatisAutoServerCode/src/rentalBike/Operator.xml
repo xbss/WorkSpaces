@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.operator" note="管理员/工作人员" author="xbss">
+		Operator
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			operatorCode
+		</field>
+		<field >
+			operatorName
+		</field>
+		<field type="int">
+            sex
+        </field>
+        <field type="int">
+            age
+        </field>
+        <field>
+            password
+        </field>
+        <field type="int">
+            state
+        </field>
+        <field type="int">
+            level
+        </field>
+        <field >
+            introduction
+        </field>
+        <field >
+            storageId
+        </field>
+	</fields>
+</entity>

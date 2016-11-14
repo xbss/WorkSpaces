@@ -65,12 +65,12 @@ public class XmlParser {
 		    	fields[i] = new Field();
 		    	Field field = fields[i];
 		    	
-		    	//ÎªÁËÅäºÏOracle£¬×Ö¶ÎÃûÈ«²¿Ê¹ÓÃ´óĞ´
+		    	//Îªï¿½ï¿½ï¿½ï¿½ï¿½Oracleï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½È«ï¿½ï¿½Ê¹ï¿½Ã´ï¿½Ğ´
 //		    	String fieldName = fieldNode.getTextContent().trim().toUpperCase();
 		    	String fieldName = fieldNode.getTextContent().trim();
 		    	
 		    	
-		    	if(!fieldName.equals("ID")) {	//Èç¹û²»ÊÇID£¬ÔòÊ××ÖÄ¸Ğ¡Ğ´
+		    	if(!fieldName.equals("ID")) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸Ğ¡Ğ´
 		    		fieldName = toLowerCaseFirstOne(fieldName);
 		    	}
 		    	
@@ -108,7 +108,7 @@ public class XmlParser {
 		    	} else if(type.equals("double")) {
 		    		field.setType(FieldType.Double);
 		    	} else {
-		    		System.out.println("×Ö¶Î " + fieldName + "ÎŞ·¨Ê¶±ğÀà±ğ: " + type);
+		    		System.out.println("å­—æ®µ " + fieldName + "ç±»å‹ä¸æ”¯æŒ: " + type);
 		    		throw new UnsupportedOperationException();
 		    	}
 		    } 
@@ -116,7 +116,7 @@ public class XmlParser {
 		    return entity;
 		}
 	
-		//Ê××ÖÄ¸´óĞ´
+		//ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½Ğ´
 		private  String toUpperCaseFirstOne(String s)
 	    {
 	        if(Character.isUpperCase(s.charAt(0)))
@@ -125,7 +125,7 @@ public class XmlParser {
 	            return (new StringBuilder()).append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
 	    }
 		
-		//Ê××ÖÄ¸Ğ¡Ğ´
+		//ï¿½ï¿½ï¿½ï¿½Ä¸Ğ¡Ğ´
 		private  String toLowerCaseFirstOne(String s)
 	    {
 	        if(Character.isLowerCase(s.charAt(0)))

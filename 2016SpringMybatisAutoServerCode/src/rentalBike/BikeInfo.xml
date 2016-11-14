@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.bikeInfo" note="自行车信息" author="xbss">
+		BikeInfo
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			bikeId
+		</field>
+		<field >
+			purchasePlanId
+		</field>
+		<field >
+            pPBikeBatchId
+        </field>
+        <field >
+            recyclePlanId
+        </field>
+        <field>
+            bikeTypeId
+        </field>
+        <field>
+            bikeTypeName
+        </field>
+        <field >
+            appearanceInfo
+        </field>
+        <field >
+			storageId
+		</field>
+		<field type="date">
+            inStorageTime
+        </field>
+        <field type="date">
+            outStorageTime
+        </field>
+        <field type="double">
+            price
+        </field>
+        <field type="int" >
+            state
+        </field>
+        <field type="int">
+            rentalState
+        </field>
+        <field >
+            barCode
+        </field>
+	</fields>
+</entity>

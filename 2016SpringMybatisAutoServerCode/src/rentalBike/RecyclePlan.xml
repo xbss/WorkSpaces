@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.recyclePlan" note="回收计划表" author="xbss">
+		RecyclePlan
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			rPId
+		</field>
+		<field >
+			rPInfo
+		</field>
+		<field >
+            operatorId
+        </field>
+        <field >
+            operatorName
+        </field>
+        <field>
+            pPBikeBatchIds
+        </field>
+        <field type="double">
+            evaluation
+        </field>
+        <field type="double">
+            totalPrice
+        </field>
+        <field type="int">
+            carryStatus
+        </field>
+	</fields>
+</entity>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.rbUser" note="用户" author="xbss">
+		RbUser
+	</class>
+	
+	<fields>
+		<field isId="1">
+			userId
+		</field>
+		<field>
+			userName
+		</field>
+		<field type="int">
+            userKind
+        </field>
+        <field type="int">
+            userState
+        </field>
+        <field >
+            mobileNumber
+        </field>
+        <field >
+            email
+        </field>
+        <field >
+            password
+        </field>
+        <field type="int">
+            sex
+        </field>
+        <field type="int">
+            age
+        </field>
+        <field type="date">
+            lastLoginTime
+        </field>
+        <field type="date">
+            signTime
+        </field>
+        
+	</fields>
+</entity>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.purchasePlanBikeBatch" note="采购计划批次表" author="xbss">
+		PurchasePlanBikeBatch
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			pPBikeBatchId
+		</field>
+		<field >
+			pPId
+		</field>
+		<field >
+            bikeTypeId
+        </field>
+        <field>
+            bikeTypeName
+        </field>
+        <field type="int">
+            amount
+        </field>
+        <field type="int">
+            carryStatus
+        </field>
+	</fields>
+</entity>

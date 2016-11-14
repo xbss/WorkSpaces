@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.supplier" note="供应商" author="xbss">
+		Supplier
+	</class>
+
+	<fields>
+
+		<field isId="1">
+			supplierId
+		</field>
+		<field>
+			supplierName
+		</field>
+		<field>
+			introduction
+		</field>
+
+	</fields>
+</entity>

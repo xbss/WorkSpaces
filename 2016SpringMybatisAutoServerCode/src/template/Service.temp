@@ -3,8 +3,8 @@ package ${packagePath?replace("entity", "service")};
 
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
-import com.cqut.service.search.SearchService;
-import com.cqut.tool.util.EntityIDFactory;
+import com.xbss.service.search.SearchService;
+import com.xbss.system.tool.EntityIDFactory;
 
 import  ${packagePath?replace("entity", "dao")}.${className}Dao;
 import  ${packagePath}.${className};

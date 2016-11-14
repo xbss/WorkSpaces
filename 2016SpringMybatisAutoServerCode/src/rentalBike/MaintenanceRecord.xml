@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.maintenanceRecord" note="维修记录" author="xbss">
+		MaintenanceRecord
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			mRId
+		</field>
+		<field >
+			mRInfo
+		</field>
+		<field >
+            operatorId
+        </field>
+        <field >
+            operatorName
+        </field>
+        <field>
+            mPId
+        </field>
+        <field >
+            pPBikeBatchIds
+        </field>
+        <field type="int">
+            mRtype
+        </field>
+        <field >
+            userId
+        </field>
+        <field >
+            userName
+        </field>
+        <field type="double">
+            totalPrice
+        </field>
+	</fields>
+</entity>

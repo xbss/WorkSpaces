@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.rentalBikeHistory" note="车辆租借记录" author="xbss">
+		RentalBikeHistory
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			rentalId
+		</field>
+		<field>
+			bikeId
+		</field>
+		<field >
+            userId
+        </field>
+        <field >
+            userName
+        </field>
+        <field>operatorId</field>
+        <field>operatorName</field>
+        <field type="date" >
+            startTime
+        </field>
+        <field type="date">
+            endTime
+        </field>
+        <field >
+            rentalTime
+        </field>
+        <field type="double">
+            rentalPrice
+        </field>
+        <field type="int">
+            state
+        </field>
+        <field type="int">
+            damage
+        </field>
+	</fields>
+</entity>

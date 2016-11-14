@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+	<class classPackage="com.xbss.entity.maintenancePlan" note="维修计划" author="xbss">
+		MaintenancePlan
+	</class>
+	
+	<fields>
+	
+		<field isId="1">
+			mPId
+		</field>
+		<field >
+			mPInfo
+		</field>
+		<field >
+            operatorId
+        </field>
+        <field >
+            operatorName
+        </field>
+        <field>
+            pPBikeBatchIds
+        </field>
+        <field type="double">
+            totalPrice
+        </field>
+        <field type="int">
+            carryStatus
+        </field>
+	</fields>
+</entity>

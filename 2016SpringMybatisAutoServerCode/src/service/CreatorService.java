@@ -11,9 +11,9 @@ public class CreatorService {
 	XmlParser parser = new XmlParser();
 	public void createInPath(String xmlPath,String exportPath){
 		File filePath = new File(xmlPath);
-		if(filePath.isDirectory()) {	//如果是路径，则遍历该路径下所有xml
+		if(filePath.isDirectory()) {	//濡傛灉鏄矾寰勶紝鍒欓亶鍘嗚璺緞涓嬫墍鏈墄ml
 			String[] list;  
-	        list = filePath.list(new FilenameFilter() {  //找出路径中所有xml
+	        list = filePath.list(new FilenameFilter() {  //鎵惧嚭璺緞涓墍鏈墄ml
 	            private Pattern pattern = Pattern.compile("\\w+\\.xml");   
 	            public boolean accept(File dir, String name) {  
 	                return pattern.matcher(name).matches();  
