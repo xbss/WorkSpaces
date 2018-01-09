@@ -9,7 +9,7 @@ _ _ _
 - - -
 
 
-![logo](https://rawgit.com/xbss/RentalBike/master/20160900RentalBike/WebRoot/user/img/bike-blue.png)
+![logo](https://rawgit.com/xbss/WorkSpaces/master/20160900RentalBike/WebRoot/user/img/bike-blue.png)
 
 自行车租赁收费
 始于201609
