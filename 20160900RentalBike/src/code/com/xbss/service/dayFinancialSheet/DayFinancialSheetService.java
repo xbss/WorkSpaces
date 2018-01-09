@@ -4,10 +4,7 @@ package com.xbss.service.dayFinancialSheet;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.xbss.service.search.SearchService;
-import com.xbss.system.tool.EntityIDFactory;
-
 import  com.xbss.dao.dayFinancialSheet.DayFinancialSheetDao;
-import  com.xbss.entity.dayFinancialSheet.DayFinancialSheet;
 
 /**
  * @author xbss

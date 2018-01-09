@@ -17,6 +17,11 @@ import com.xbss.system.tool.SystemConfig;
 @Service
 public class TableCreatorServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void init() throws ServletException {
 		String isCreate = SystemConfig.getSystemPram("createTalbe");

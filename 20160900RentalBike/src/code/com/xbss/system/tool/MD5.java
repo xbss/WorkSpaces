@@ -24,7 +24,8 @@ public class MD5 {
     }
 
     // 返回形式只为数字
-    private static String byteToNum(byte bByte) {
+    @SuppressWarnings("unused")
+	private static String byteToNum(byte bByte) {
         int iRet = bByte;
         System.out.println("iRet1=" + iRet);
         if (iRet < 0) {
@@ -58,8 +59,8 @@ public class MD5 {
     public static void main(String[] args) {
     	Scanner input = new Scanner(System.in);
     	System.out.print("Please enter the String which you want to change: ");
-    	String s = input.next();	
-        MD5 getMD5 = new MD5();
-        System.out.println(getMD5.GetMD5Code(s));
+    	String s = input.next();
+        System.out.println(MD5.GetMD5Code(s));
+        input.close();
     }
 }

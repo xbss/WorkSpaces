@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xbss.entity.bikeInfo.BikeInfo;
 import com.xbss.entity.compensationRecord.CompensationRecord;
 import com.xbss.service.compensationRecord.ICompensationRecordService;
 

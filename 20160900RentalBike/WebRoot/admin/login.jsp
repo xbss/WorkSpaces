@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<input id="password" name="password" type="password" placeholder="密码" onfocus="'';" onblur="" required data-msg-required="请输入密码">
 		<div id="randomcode">
 		  <input id="randomcodeInput" name="randomcode" type="text"  placeholder="验证码" onfocus=";" onblur="" required >
-		  <img id="randomcodeImg" name="randomcodeImg" alt="Random Code"  title="Random Code" src="operatorController/getRandomCode.do?id="+ Math.random()">
+		  <img id="randomcodeImg" name="randomcodeImg" alt="Random Code"  title="Random Code" src="operatorController/getRandomCode.do?id="+"Math.random()">
 		</div>
 		<div id="login-server-info">
 		  <span ></span>
