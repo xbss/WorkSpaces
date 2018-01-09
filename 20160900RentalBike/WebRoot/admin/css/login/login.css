@@ -1,0 +1,158 @@
+/*-- login --*/
+body#login{
+  background: url(../../img/bg.jpg)no-repeat;
+  background-size:cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  -ms-background-size:cover;
+  min-height:650px;
+  min-width:600px;
+}
+.app-cam {
+  width:22%;
+  margin:3em auto auto auto;
+}
+/* input */
+.app-cam input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  color: #999;
+  font-size: 0.85em;
+  outline: none;
+  font-weight: 300;
+  border: none;
+  background:#222224;
+  margin:0 0 1em 0;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.app-cam input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  color:#999;
+  font-size: 0.85em;
+  outline: none;
+  font-weight: 300;
+  border: none;
+  background:#222224;
+  margin:0 0 1em 0;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+/* random code */
+#randomcode{ widows: 100%; }
+
+#randomcode #randomcodeInput{ width: 47.8%; float: left;margin:0 4% 0 0;}
+
+#randomcode #randomcodeImg{width:47.8%;height:47px; float: left;border:1px solid #ccc;margin:0 0 1em 0;}
+.app-cam #loginBtn{
+  clear:both;
+  font-size: 14px;
+  font-weight: 300 !important;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  height:47px;
+  border: none;
+  background: rgb(6, 217, 149);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  text-align:center;
+  text-transform: uppercase;
+  line-height: 47px;
+}
+.app-cam #loginBtn:hover{
+  background:rgb(1, 200, 136);
+  color:#fff !important;
+}
+
+
+ul.new {
+  margin:2em 0 0 0;
+  list-style:none;
+  padding:0;
+}
+ul.new li.new_left{
+  float: left;
+}
+ul.new li.new_left p, p.sign{
+  font-weight:300;
+} 
+p.sign a, ul.new li.new_left p a{
+  color:#000;
+}
+ul.new li.new_right{
+  float: right;
+}
+.app-cam p {
+  color:#000;
+  font-size: 14px;
+  margin: 1em 0;
+}
+.form-signin a, .registration, .login-body label {
+  margin: 1em 0 0 0;
+  font-weight: 300;
+  font-size: 0.85em;
+  text-align:center;
+}
+.radios input[type="radio"] {
+  margin: 4px 0 0 0;
+  vertical-align: top;
+  cursor: pointer;
+  color:#fff;
+}
+.radios label:first-child {
+  margin-left: 0;
+}
+.radios label{
+  margin-left: 15px;
+}
+
+.copy_layout{
+	position: ;
+  padding:1.5em 0;
+  background:#fff;
+  text-align:center;
+  margin: 4em 0 0em 0;
+}
+.login{
+    background:none;
+    padding:0;
+    margin:15em 0 0 0;
+}
+.login-logo {
+  padding: 50px 0;
+  text-align: center;
+  color:#000;
+  font-size: 40px;
+  text-transform: uppercase;
+  width: 100%;
+}
+/* .login-logo img{
+	width:260px;
+} */
+.login-logo span{margin: 0;}
+span#R{color: #cc3333;}
+span#E{color: #ff6666;}
+span#N{color: #cc6699;}
+span#T{color: #cc99cc;}
+span#A{color: #ff99ff;}
+span#L{color: #cc3333;}
+span#B{color: #ff6666;}
+span#I{color: #cc6699;}
+span#K{color: #cc99cc;}
+span#E{color: #ff99ff;}
+
+/* 提示信息 */
+#login-server-info{
+    text-align:center;
+    color:rgba(234,85,41,1);
+}

@@ -1,0 +1,97 @@
+html{
+	height:100%;
+}
+body {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555555;
+    background-color: white;
+    /* background-repeat:no-repeat; */
+    /* background-image: url("../img/bg.png")  ; */
+    background-image: url("../img/bg.jpg")  ;
+    /* background-size:100% 100%;
+    -o-background-size:100% 100%;
+    -webkit-background-size:100% 100%; */
+}
+input::input-placeholder {
+　color: blue !important; /* WebKit browsers */
+}
+input::-webkit-input-placeholder {
+　color: blue !important; /* WebKit browsers */
+}
+input:-moz-placeholder {
+　color: blue !important; /* Mozilla Firefox 4 to 18 */
+}
+input::-moz-placeholder {
+　color: blue !important; /* Mozilla Firefox 19+ */
+}
+input:-ms-input-placeholder {
+　color: blue !important; /* Internet Explorer 10+ */
+}
+
+#login-page{
+	/* background-color:rgba(0,0,0,0.1); */
+	width:40%;
+	margin-top:10%;
+	margin-right: auto;
+    margin-left: auto;
+	padding: 25px 0 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+#login-logo{
+	padding:20px;
+}
+#login-logo img{
+	width: 50%;
+}
+
+.input-box {
+    display: block;
+    margin-top:20px;
+    margin-bottom: 22px;
+    height: 22px;
+    line-height: 22px;
+    /* border-color: #d7d7d7; */
+}
+.input-box input{
+	width:66%;
+	margin:0;
+	bottom:5px;
+	text-align: center;
+	border: none;
+	background: none;
+}
+.input-box img{
+	width:66%;
+}
+.input-box .login-button{
+	display: inline-block;
+	width:30%;
+	height: 40px;
+	line-height:40px;
+	border:none;
+	background: #3dc2b1;
+	color:#ddd;
+}
+.input-box .login-button:active, .input-box .login-button:hover{
+	color:#fff;
+	background: #3dc2d9;
+}
+
+/* 提示信息 */
+#login-server-info{
+	display:none;
+	color:rgba(234,85,41,1);
+}
+
+.login-copy_layout{
+	bottom:5px;
+	top:60px;
+	position: relative;
+    width: 100%;
+}
+.login-copy_layout a{
+	color:#3dc2b1;
+}

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.rbCard.RbCardDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.rbCard.RbCard">  
+     <![CDATA[   
+         insert into  rbCard ( cardId, signTime, signUserId, signUserName, level, discount, operatorId, operatorName, state)
+         values(#{cardId}, #{signTime}, #{signUserId}, #{signUserName}, #{level}, #{discount}, #{operatorId}, #{operatorName}, #{state})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into rbCard ( cardId, signTime, signUserId, signUserName, level, discount, operatorId, operatorName, state) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.cardId}, #{item.signTime}, #{item.signUserId}, #{item.signUserName}, #{item.level}, #{item.discount}, #{item.operatorId}, #{item.operatorName}, #{item.state})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update rbCard set 	
+      		signTime = #{entity.signTime},
+      		signUserId = #{entity.signUserId},
+      		signUserName = #{entity.signUserName},
+      		level = #{entity.level},
+      		discount = #{entity.discount},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		state = #{entity.state}
+      	]]>
+      	<where>
+      		cardId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update rbCard set 	
+      		signTime = #{entity.signTime},
+      		signUserId = #{entity.signUserId},
+      		signUserName = #{entity.signUserName},
+      		level = #{entity.level},
+      		discount = #{entity.discount},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		state = #{entity.state}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  rbCard set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	cardId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  rbCard set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from rbCard   
+		]]>
+		<where>
+			cardId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from rbCard  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from rbCard    
+		]]>
+		<where>
+			 cardId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.rbCard.RbCard">
+		<![CDATA[   
+			select * from rbCard 
+		]]>
+		<where>
+			cardId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.rbCard.RbCard">
+		<![CDATA[   
+			select * from rbCard 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from rbCard 
+        <where>
+        	cardId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from rbCard 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct cardId) from rbCard
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

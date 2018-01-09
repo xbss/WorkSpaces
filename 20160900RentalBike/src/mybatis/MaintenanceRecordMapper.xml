@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.maintenanceRecord.MaintenanceRecordDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.maintenanceRecord.MaintenanceRecord">  
+     <![CDATA[   
+         insert into  maintenanceRecord ( mRId, mRInfo, operatorId, operatorName, mPId, pPBikeBatchIds, mRtype, userId, userName, totalPrice)
+         values(#{mRId}, #{mRInfo}, #{operatorId}, #{operatorName}, #{mPId}, #{pPBikeBatchIds}, #{mRtype}, #{userId}, #{userName}, #{totalPrice})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into maintenanceRecord ( mRId, mRInfo, operatorId, operatorName, mPId, pPBikeBatchIds, mRtype, userId, userName, totalPrice) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.mRId}, #{item.mRInfo}, #{item.operatorId}, #{item.operatorName}, #{item.mPId}, #{item.pPBikeBatchIds}, #{item.mRtype}, #{item.userId}, #{item.userName}, #{item.totalPrice})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update maintenanceRecord set 	
+      		mRInfo = #{entity.mRInfo},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		mPId = #{entity.mPId},
+      		pPBikeBatchIds = #{entity.pPBikeBatchIds},
+      		mRtype = #{entity.mRtype},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		totalPrice = #{entity.totalPrice}
+      	]]>
+      	<where>
+      		mRId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update maintenanceRecord set 	
+      		mRInfo = #{entity.mRInfo},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		mPId = #{entity.mPId},
+      		pPBikeBatchIds = #{entity.pPBikeBatchIds},
+      		mRtype = #{entity.mRtype},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		totalPrice = #{entity.totalPrice}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  maintenanceRecord set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	mRId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  maintenanceRecord set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from maintenanceRecord   
+		]]>
+		<where>
+			mRId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from maintenanceRecord  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from maintenanceRecord    
+		]]>
+		<where>
+			 mRId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.maintenanceRecord.MaintenanceRecord">
+		<![CDATA[   
+			select * from maintenanceRecord 
+		]]>
+		<where>
+			mRId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.maintenanceRecord.MaintenanceRecord">
+		<![CDATA[   
+			select * from maintenanceRecord 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from maintenanceRecord 
+        <where>
+        	mRId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from maintenanceRecord 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct mRId) from maintenanceRecord
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.storage.StorageDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.storage.Storage">  
+     <![CDATA[   
+         insert into  storage ( storageId, address, state, createTime, operatorId, operatorName, information)
+         values(#{storageId}, #{address}, #{state}, #{createTime}, #{operatorId}, #{operatorName}, #{information})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into storage ( storageId, address, state, createTime, operatorId, operatorName, information) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.storageId}, #{item.address}, #{item.state}, #{item.createTime}, #{item.operatorId}, #{item.operatorName}, #{item.information})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update storage set 	
+      		address = #{entity.address},
+      		state = #{entity.state},
+      		createTime = #{entity.createTime},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		information = #{entity.information}
+      	]]>
+      	<where>
+      		storageId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update storage set 	
+      		address = #{entity.address},
+      		state = #{entity.state},
+      		createTime = #{entity.createTime},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		information = #{entity.information}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  storage set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	storageId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  storage set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from storage   
+		]]>
+		<where>
+			storageId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from storage  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from storage    
+		]]>
+		<where>
+			 storageId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.storage.Storage">
+		<![CDATA[   
+			select * from storage 
+		]]>
+		<where>
+			storageId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.storage.Storage">
+		<![CDATA[   
+			select * from storage 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from storage 
+        <where>
+        	storageId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from storage 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct storageId) from storage
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.purchasePlan.PurchasePlanDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.purchasePlan.PurchasePlan">  
+     <![CDATA[   
+         insert into  purchasePlan ( pPId, pPInfo, operatorId, operatorName, totalPrice)
+         values(#{pPId}, #{pPInfo}, #{operatorId}, #{operatorName}, #{totalPrice})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into purchasePlan ( pPId, pPInfo, operatorId, operatorName, totalPrice) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.pPId}, #{item.pPInfo}, #{item.operatorId}, #{item.operatorName}, #{item.totalPrice})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update purchasePlan set 	
+      		pPInfo = #{entity.pPInfo},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		totalPrice = #{entity.totalPrice}
+      	]]>
+      	<where>
+      		pPId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update purchasePlan set 	
+      		pPInfo = #{entity.pPInfo},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		totalPrice = #{entity.totalPrice}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  purchasePlan set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	pPId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  purchasePlan set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from purchasePlan   
+		]]>
+		<where>
+			pPId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from purchasePlan  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from purchasePlan    
+		]]>
+		<where>
+			 pPId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.purchasePlan.PurchasePlan">
+		<![CDATA[   
+			select * from purchasePlan 
+		]]>
+		<where>
+			pPId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.purchasePlan.PurchasePlan">
+		<![CDATA[   
+			select * from purchasePlan 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from purchasePlan 
+        <where>
+        	pPId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from purchasePlan 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct pPId) from purchasePlan
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

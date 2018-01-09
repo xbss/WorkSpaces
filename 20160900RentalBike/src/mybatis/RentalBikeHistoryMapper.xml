@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.rentalBikeHistory.RentalBikeHistoryDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.rentalBikeHistory.RentalBikeHistory">  
+     <![CDATA[   
+         insert into  rentalBikeHistory ( rentalId, bikeId, userId, userName, operatorId, operatorName, startTime, endTime, rentalTime, rentalPrice, state, damage)
+         values(#{rentalId}, #{bikeId}, #{userId}, #{userName}, #{operatorId}, #{operatorName}, #{startTime}, #{endTime}, #{rentalTime}, #{rentalPrice}, #{state}, #{damage})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into rentalBikeHistory ( rentalId, bikeId, userId, userName, operatorId, operatorName, startTime, endTime, rentalTime, rentalPrice, state, damage) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.rentalId}, #{item.bikeId}, #{item.userId}, #{item.userName}, #{item.operatorId}, #{item.operatorName}, #{item.startTime}, #{item.endTime}, #{item.rentalTime}, #{item.rentalPrice}, #{item.state}, #{item.damage})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update rentalBikeHistory set 	
+      		bikeId = #{entity.bikeId},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		startTime = #{entity.startTime},
+      		endTime = #{entity.endTime},
+      		rentalTime = #{entity.rentalTime},
+      		rentalPrice = #{entity.rentalPrice},
+      		state = #{entity.state},
+      		damage = #{entity.damage}
+      	]]>
+      	<where>
+      		rentalId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update rentalBikeHistory set 	
+      		bikeId = #{entity.bikeId},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		startTime = #{entity.startTime},
+      		endTime = #{entity.endTime},
+      		rentalTime = #{entity.rentalTime},
+      		rentalPrice = #{entity.rentalPrice},
+      		state = #{entity.state},
+      		damage = #{entity.damage}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  rentalBikeHistory set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	rentalId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  rentalBikeHistory set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from rentalBikeHistory   
+		]]>
+		<where>
+			rentalId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from rentalBikeHistory  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from rentalBikeHistory    
+		]]>
+		<where>
+			 rentalId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.rentalBikeHistory.RentalBikeHistory">
+		<![CDATA[   
+			select * from rentalBikeHistory 
+		]]>
+		<where>
+			rentalId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.rentalBikeHistory.RentalBikeHistory">
+		<![CDATA[   
+			select * from rentalBikeHistory 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from rentalBikeHistory 
+        <where>
+        	rentalId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from rentalBikeHistory 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct rentalId) from rentalBikeHistory
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

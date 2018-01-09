@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.compensationRecord.CompensationRecordDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.compensationRecord.CompensationRecord">  
+     <![CDATA[   
+         insert into  compensationRecord ( cRId, bikeId, userId, userName, rentalId, price, reason, operatorId, operatorName, cRTime)
+         values(#{cRId}, #{bikeId}, #{userId}, #{userName}, #{rentalId}, #{price}, #{reason}, #{operatorId}, #{operatorName}, #{cRTime})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into compensationRecord ( cRId, bikeId, userId, userName, rentalId, price, reason, operatorId, operatorName, cRTime) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.cRId}, #{item.bikeId}, #{item.userId}, #{item.userName}, #{item.rentalId}, #{item.price}, #{item.reason}, #{item.operatorId}, #{item.operatorName}, #{item.cRTime})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update compensationRecord set 	
+      		bikeId = #{entity.bikeId},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		rentalId = #{entity.rentalId},
+      		price = #{entity.price},
+      		reason = #{entity.reason},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		cRTime = #{entity.cRTime}
+      	]]>
+      	<where>
+      		cRId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update compensationRecord set 	
+      		bikeId = #{entity.bikeId},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		rentalId = #{entity.rentalId},
+      		price = #{entity.price},
+      		reason = #{entity.reason},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		cRTime = #{entity.cRTime}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  compensationRecord set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	cRId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  compensationRecord set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from compensationRecord   
+		]]>
+		<where>
+			cRId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from compensationRecord  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from compensationRecord    
+		]]>
+		<where>
+			 cRId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.compensationRecord.CompensationRecord">
+		<![CDATA[   
+			select cRId, bikeId, userId, userName, rentalId, price, reason, operatorId, operatorName, DATE_FORMAT(cRTime, '%Y-%m-%d %H:%i:%S')  AS cRTime from compensationRecord 
+		]]>
+		<where>
+			cRId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.compensationRecord.CompensationRecord">
+		<![CDATA[   
+			select * from compensationRecord 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from compensationRecord 
+        <where>
+        	cRId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from compensationRecord 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct cRId) from compensationRecord
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

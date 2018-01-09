@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.suggestion.SuggestionDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.suggestion.Suggestion">  
+     <![CDATA[   
+         insert into  suggestion ( suggestionId, content, state, operatorId, operatorName, userId, userName, submitTime, feedBackInfo)
+         values(#{suggestionId}, #{content}, #{state}, #{operatorId}, #{operatorName}, #{userId}, #{userName}, #{submitTime}, #{feedBackInfo})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into suggestion ( suggestionId, content, state, operatorId, operatorName, userId, userName, submitTime, feedBackInfo) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.suggestionId}, #{item.content}, #{item.state}, #{item.operatorId}, #{item.operatorName}, #{item.userId}, #{item.userName}, #{item.submitTime}, #{item.feedBackInfo})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update suggestion set 	
+      		content = #{entity.content},
+      		state = #{entity.state},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		submitTime = #{entity.submitTime},
+      		feedBackInfo = #{entity.feedBackInfo}
+      	]]>
+      	<where>
+      		suggestionId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update suggestion set 	
+      		content = #{entity.content},
+      		state = #{entity.state},
+      		operatorId = #{entity.operatorId},
+      		operatorName = #{entity.operatorName},
+      		userId = #{entity.userId},
+      		userName = #{entity.userName},
+      		submitTime = #{entity.submitTime},
+      		feedBackInfo = #{entity.feedBackInfo}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  suggestion set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	suggestionId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  suggestion set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from suggestion   
+		]]>
+		<where>
+			suggestionId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from suggestion  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from suggestion    
+		]]>
+		<where>
+			 suggestionId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.suggestion.Suggestion">
+		<![CDATA[   
+			select * from suggestion 
+		]]>
+		<where>
+			suggestionId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.suggestion.Suggestion">
+		<![CDATA[   
+			select * from suggestion 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from suggestion 
+        <where>
+        	suggestionId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from suggestion 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct suggestionId) from suggestion
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

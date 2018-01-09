@@ -1,0 +1,73 @@
+a,input,textarea{
+	outline:none;
+}
+a {
+    color: #555555;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+.navbar-user {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    margin-bottom: 0;
+    z-index: 1010;
+}
+
+.navbar-user .login, .wrap-btn .login {
+    position: relative;
+    top: 7px;
+    float: right;
+    padding: 0 2px;
+    margin-right: 8px;
+}
+/* 导航栏 */
+
+.navbar-jianshu {
+    position: fixed;
+    width: 70px;
+    z-index: 1049;
+    -webkit-backface-visibility: hidden;
+    border-radius:0;
+}
+
+.expanded {
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #2a2a2a;
+}
+
+.expanded a {
+    color: #999999;
+    text-shadow: 0 1px 0 black;
+}
+.expanded .navbar-home  a:hover, .expanded .dropdown a:active, .expanded .dropdown a.active {
+    background-color: #71a4bf;
+    color: white;
+    text-shadow: 0 1px 0 #de533a;
+}
+.title{
+	display: none;
+}
+
+.navbar-jianshu a.logo {
+    font-size: 18px;
+    color: white;
+}
+.navbar-jianshu a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.navbar-jianshu .nav-user {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 5px;
+}

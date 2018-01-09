@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.bikeType.BikeTypeDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.bikeType.BikeType">  
+     <![CDATA[   
+         insert into  bikeType ( bikeTypeId, supplierId, supplierName, bikeTypeName, createTime, price)
+         values(#{bikeTypeId}, #{supplierId}, #{supplierName}, #{bikeTypeName}, #{createTime}, #{price})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into bikeType ( bikeTypeId, supplierId, supplierName, bikeTypeName, createTime, price) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.bikeTypeId}, #{item.supplierId}, #{item.supplierName}, #{item.bikeTypeName}, #{item.createTime}, #{item.price})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update bikeType set 	
+      		supplierId = #{entity.supplierId},
+      		supplierName = #{entity.supplierName},
+      		bikeTypeName = #{entity.bikeTypeName},
+      		createTime = #{entity.createTime},
+      		price = #{entity.price}
+      	]]>
+      	<where>
+      		bikeTypeId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update bikeType set 	
+      		supplierId = #{entity.supplierId},
+      		supplierName = #{entity.supplierName},
+      		bikeTypeName = #{entity.bikeTypeName},
+      		createTime = #{entity.createTime},
+      		price = #{entity.price}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  bikeType set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	bikeTypeId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  bikeType set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from bikeType   
+		]]>
+		<where>
+			bikeTypeId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from bikeType  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from bikeType    
+		]]>
+		<where>
+			 bikeTypeId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.bikeType.BikeType">
+		<![CDATA[   
+			select * from bikeType 
+		]]>
+		<where>
+			bikeTypeId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.bikeType.BikeType">
+		<![CDATA[   
+			select * from bikeType 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from bikeType 
+        <where>
+        	bikeTypeId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from bikeType 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct bikeTypeId) from bikeType
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>

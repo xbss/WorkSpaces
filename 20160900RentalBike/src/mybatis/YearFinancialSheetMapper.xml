@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.xbss.dao.yearFinancialSheet.YearFinancialSheetDao">
+ 
+    <insert id="save" parameterType="com.xbss.entity.yearFinancialSheet.YearFinancialSheet">  
+     <![CDATA[   
+         insert into  yearFinancialSheet ( yFSId, createTime, income, purchaseCosts, maintenanceCosts, compensation, recycleIncomes, totalIncome, remarks)
+         values(#{yFSId}, #{createTime}, #{income}, #{purchaseCosts}, #{maintenanceCosts}, #{compensation}, #{recycleIncomes}, #{totalIncome}, #{remarks})	
+     ]]>   
+    </insert>
+  
+    
+    <!--  mysql -->
+    <insert id="saveEntities"> 
+	 	 <![CDATA[  
+	    	insert into yearFinancialSheet ( yFSId, createTime, income, purchaseCosts, maintenanceCosts, compensation, recycleIncomes, totalIncome, remarks) VALUES 
+	    ]]>  
+	    <foreach collection="entities" item="item" index="index" separator=",">   
+	         ( #{item.yFSId}, #{item.createTime}, #{item.income}, #{item.purchaseCosts}, #{item.maintenanceCosts}, #{item.compensation}, #{item.recycleIncomes}, #{item.totalIncome}, #{item.remarks})
+	    </foreach> 
+	</insert> 
+	
+	
+	<update id="updateByID" >
+		<![CDATA[  
+			update yearFinancialSheet set 	
+      		createTime = #{entity.createTime},
+      		income = #{entity.income},
+      		purchaseCosts = #{entity.purchaseCosts},
+      		maintenanceCosts = #{entity.maintenanceCosts},
+      		compensation = #{entity.compensation},
+      		recycleIncomes = #{entity.recycleIncomes},
+      		totalIncome = #{entity.totalIncome},
+      		remarks = #{entity.remarks}
+      	]]>
+      	<where>
+      		yFSId = #{id}
+      	</where>  		
+	</update>
+		
+		
+	<update id="updateByCondition">
+		<![CDATA[  
+			update yearFinancialSheet set 	
+      		createTime = #{entity.createTime},
+      		income = #{entity.income},
+      		purchaseCosts = #{entity.purchaseCosts},
+      		maintenanceCosts = #{entity.maintenanceCosts},
+      		compensation = #{entity.compensation},
+      		recycleIncomes = #{entity.recycleIncomes},
+      		totalIncome = #{entity.totalIncome},
+      		remarks = #{entity.remarks}
+      	]]>
+      	<where>
+      		<if test="condition != null">
+      			${condition}
+      		</if>
+      	</where>  		
+	</update>	
+	
+	<update id="updatePropByID">
+		<![CDATA[  
+			update  yearFinancialSheet set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	yFSId = #{id}
+        </where>
+	</update>	
+	
+	<update id="updatePropByCondition">
+		<![CDATA[  
+			update  yearFinancialSheet set
+		]]>
+		<foreach collection="prop" item="item" index="index" separator=",">
+          	${item.key} = #{item.value}
+        </foreach>
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</update>	
+	
+   <delete id="deleteByID"  parameterType="string">
+		<![CDATA[   
+			delete from yearFinancialSheet   
+		]]>
+		<where>
+			yFSId = #{ID}
+		</where>
+	</delete>	
+	
+	<delete id="deleteByCondition"  parameterType="string">
+		<![CDATA[   
+			delete from yearFinancialSheet  
+		]]>
+		<where>
+			<if test="condition != null">
+				${condition}
+			</if>	
+		</where>	
+	</delete>	
+	
+	<delete id="deleteEntities"  parameterType="string">
+		<![CDATA[   
+			delete from yearFinancialSheet    
+		]]>
+		<where>
+			 yFSId in
+			 <foreach collection="ids" item="item" index="index" separator="," open="(" close=")">
+          		#{item}
+        	</foreach>
+		</where>	
+	</delete>
+	
+	
+	<select id="getByID" resultType="com.xbss.entity.yearFinancialSheet.YearFinancialSheet">
+		<![CDATA[   
+			select * from yearFinancialSheet 
+		]]>
+		<where>
+			yFSId = #{ID}
+		</where>
+	</select>
+	
+	<select id="getByCondition" resultType="com.xbss.entity.yearFinancialSheet.YearFinancialSheet">
+		<![CDATA[   
+			select * from yearFinancialSheet 
+		]]>
+		<where>
+			<if test="condition != null">
+		 		${condition}
+		 	</if>
+		</where>
+	</select>
+	
+	<select id="findByID" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from yearFinancialSheet 
+        <where>
+        	yFSId = #{id}
+        </where>
+	</select>	
+	
+	
+	<select id="findByCondition" resultType="map">
+		select 
+		<foreach collection="properties" item="item" index="index" separator=",">
+          	${item}
+        </foreach>
+        from yearFinancialSheet 
+        <where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>
+        </where>
+	</select>		
+	
+		
+	<select id="getCountByCondition" resultType="int">
+		select count(distinct yFSId) from yearFinancialSheet
+		<where>
+        	<if test="condition != null">
+        		${condition}
+        	</if>	
+        </where>
+	</select>	
+</mapper>
